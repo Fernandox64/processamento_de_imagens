@@ -1,0 +1,166 @@
+Fernando Rodrigues 
+https://github.com/Fernandox64/processamento_de_imagens
+
+% questão 1 Dado x = [1, 2, 3, 4, 5, 6], escreva esse vetor em Matlab e entenda o significado dos
+comandos abaixo:
+
+x = [1, 2, 3, 4, 5, 6]
+
+x(5) %imprime o conteudo do vetor x = 5
+x(2 : 5) %imprime o conteudo de um vetor contendo os valores de 2 a 5 sequencialmente incrementados de 1 em 1.
+x(1 : end) %imprime o conteudo do vetor x do 1° ao indice do ultimo elemento.
+x(1 : end − 1) % Tenta imprimir o vetor X do indice 1 ate o penultimo indice do vetor X.(Comando invalido)
+x(6 : −2 : 1) % itera dentro do vetor x de -2 em duas variaveis (Comando invalido)
+x([1, 5, 2, 1, 1]) % Adiciona os valores dentro de um vetor salva na variavel X.(Podem ser separados por virgula ou espaço)
+
+%2 quetão comandos 2. Considere a matriz M = [10 2 10 5; 2 5 1 6; 2 4 8 10; 4 10 3 5]. Substitua os valores
+da primeira coluna e da última linha por 1.
+
+M(:,1) = 1
+M(4,:) = 1
+
+% questão 3 Considere os vetores A = [1, 2, 3], B = [3, 2, 1] e a matriz M = [4 5 6 ; 6 5 3], digite
+os próximos comandos e verifique se sua execução está correta, explique o porquê.
+Dica: utilize o comando size() ou whos.
+
+A = [1, 2, 3]
+B = [3, 2, 1] 
+M = [4 5 6 ; 6 5 3]
+
+A + B % ans = 4     4     4
+
+A + M 
+%{
+ans =
+
+     5     7     9
+     7     7     6
+%}
+A' + B
+ %{
+ans =
+
+     4     3     2
+     5     4     3
+     6     5     4
+%}
+
+
+%{
+ M -  [A; B]
+
+ans =
+
+     3     3     3
+     3     3     2
+%}
+[A; B']
+Error using vertcat
+Dimensions of matrices being concatenated are not consistent.
+%{
+[A:B]
+
+ans =
+
+     1     2     3
+%}
+
+%{
+M - 3
+
+ans =
+
+     1     2     3
+     3     2     0
+%}
+
+%{
+A * B
+Error using  * 
+Inner matrix dimensions must agree.
+%}
+
+%{
+A =
+
+     1     2     3
+
+B
+
+B =
+
+     3     2     1
+inconcistencia entre tamnhos de A e B
+%}
+
+%{
+c = a .* b
+
+c =
+
+     3     4     3
+
+%}
+
+%Questão 4 Dada a matriz
+
+2 10 7 6
+3 12 25 9 
+
+(a) Acrescente uma terceira linha a matriz com os elementos 30 21 19 1
+(b) Defina uma matriz B que contenha as três primeiras linhas da matriz A e as
+colunas de 2 a 4.
+
+>> M = [ 2 10 7 6; 3 12 25 9] 
+
+M =
+
+     2    10     7     6
+     3    12    25     9
+
+>> M = [ 2 10 7 6; 3 12 25 9;30 21 19 1]
+
+M =
+
+     2    10     7     6
+     3    12    25     9
+    30    21    19     1
+
+
+>> R = [M(:,2) , M(:,4)]
+
+R =
+
+    10     6
+    12     9
+    21     1
+
+%Questão 5. Criar um vetor com componente ímpares entre 31 e 75
+
+>> V =[31:2:75]
+
+V =
+
+  Columns 1 through 12
+
+    31    33    35    37    39    41    43    45    47    49    51    53
+
+  Columns 13 through 23
+
+    55    57    59    61    63    65    67    69    71    73    75
+
+6. Crie um vetor com o comando randi(100,1,10). Encontre qual é o maior valor neste
+vetor e seu índice. Substitua pelo seu quadrado. Dica: verifique o funcionamento da
+função max.
+
+>> T = randi(100,1,10)
+
+T =
+
+    16    98    96    49    81    15    43    92    80    96
+
+>> Res = max(T)
+
+Res =
+
+    98
